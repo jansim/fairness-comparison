@@ -1,5 +1,8 @@
 FROM ubuntu:16.04
 
+# Use bash as shell
+SHELL ["/bin/bash", "-c"]
+
 # Install python 3.6
 RUN apt-get update
 RUN apt-get install -y build-essential git libreadline-dev zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev curl
@@ -8,7 +11,7 @@ RUN echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 # Since we're not by default running in bash, we have to use . instead of source
-RUN . ~/.bashrc
+RUN source ~/.bashrc
 RUN pyenv install 3.6.0
 RUN pyenv global 3.6
 
