@@ -62,6 +62,4 @@ RUN pip3 install pip==9.0.1
 COPY . $HOME/fairness-comparison
 WORKDIR $HOME/fairness-comparison
 
-RUN printf "from fairness.benchmark import run\nrun()" > test-run.py
-
-CMD [ "bash" ]
+CMD [ "python", "run.py" ]
