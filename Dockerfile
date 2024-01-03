@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Install python 3.6
 RUN apt-get update
-RUN apt-get install build-essential git libreadline-dev zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
+RUN apt-get install -y build-essential git libreadline-dev zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
 RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 RUN echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
@@ -26,7 +26,7 @@ RUN pip3 install numpy==1.14.0
 RUN pip3 install scipy==0.19.0
 
 # Install dependencies for matplotlib
-RUN apt-get install libpng-dev libfreetype6 libfreetype6-dev pkg-config
+RUN apt-get install -y libpng-dev libfreetype6 libfreetype6-dev pkg-config
 RUN pip3 install packaging
 RUN pip3 install tornado
 RUN pip3 install matplotlib==2.0.0
