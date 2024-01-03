@@ -152,7 +152,7 @@ class BankG(BankData):
         self.missing_val_indicators = ['?']
 
 new_datasets = [
-    # BankA(),
+    BankA(),
     BankB(),
     BankC(),
     BankD(),
@@ -172,4 +172,4 @@ for dataset in new_datasets:
 prepare_data(dataset_names = dataset_names)
 
 # Run benchmark
-run(num_trials = 1, dataset = dataset_names)
+run(num_trials = 10, dataset = dataset_names)
