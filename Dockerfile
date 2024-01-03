@@ -32,11 +32,7 @@ RUN apt-get install -y \
     libopenblas-dev \
     liblapack-dev
 
-# Download code (to get requirements.txt)
-RUN git clone --depth 1 https://github.com/algofairness/fairness-comparison.git
-RUN cd fairness-comparison
-
-# Install Python dependencies
+# Install Python dependencies (the order and versions here do sometimes matter)
 RUN pip3 install numpy==1.14.0
 RUN pip3 install scipy==0.19.0
 
@@ -61,6 +57,10 @@ RUN pip3 install wheel==0.29.0
 RUN pip3 install fire==0.1.1
 RUN pip3 install BlackBoxAuditing>=0.1.26
 RUN pip3 install pip==9.0.1
+
+# Download code (to get requirements.txt)
+COPY . $HOME/fairness-comparison
+WORKDIR $HOME/fairness-comparison
 
 RUN printf "from fairness.benchmark import run\nrun()" > test-run.py
 
