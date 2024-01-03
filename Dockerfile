@@ -62,8 +62,6 @@ RUN pip3 install fire==0.1.1
 RUN pip3 install BlackBoxAuditing>=0.1.26
 RUN pip3 install pip==9.0.1
 
-RUN pip3 install -r requirements.txt
-
 RUN printf "from fairness.benchmark import run\nrun()" > test-run.py
 
 CMD [ "bash" ]
