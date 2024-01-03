@@ -1,3 +1,31 @@
+# 🐳 Docker Image for fairness-comparison
+
+This repository contains a Dockerfile to build a Docker image to execute the analyses in [https://github.com/algofairness/fairness-comparison](https://github.com/algofairness/fairness-comparison).
+
+## Run the Analyses
+
+To run the analyses using the prebuilt docker-image, run the following command:
+
+```bash
+docker run -it docker pull ghcr.io/jansim/friedler-fairness-comparison:docker
+```
+
+## Build the Docker Image
+
+To build the Docker image yourself, run the following command in the root directory of this repository:
+
+```bash
+docker build -t fairness-comparison .
+```
+
+To run the just built Docker image, run the following command:
+
+```bash
+docker run -it fairness-comparison
+```
+
+# Original README
+
 This repository is meant to facilitate the benchmarking of fairness aware machine learning algorithms.
 
 The associated paper is:
