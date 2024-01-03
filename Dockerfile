@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Install python 3.6
 RUN apt-get update
-RUN apt-get install -y build-essential git libreadline-dev zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
+RUN apt-get install -y build-essential git libreadline-dev zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev curl
 RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 RUN echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
