@@ -7,7 +7,8 @@ RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-instal
 RUN echo 'export PATH="/root/.pyenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 RUN echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-RUN source ~/.bashrc
+# Since we're not by default running in bash, we have to use . instead of source
+RUN . ~/.bashrc
 RUN pyenv install 3.6.0
 RUN pyenv global 3.6
 
