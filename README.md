@@ -7,7 +7,7 @@ This repository contains a Dockerfile to build a Docker image to execute the ana
 To run the analyses using the prebuilt docker-image, run the following command:
 
 ```bash
-docker run -it docker pull ghcr.io/jansim/friedler-fairness-comparison:docker
+docker run -it -v ./new_results:/root/.fairness/ ghcr.io/jansim/friedler-fairness-comparison:docker
 ```
 
 ## Build the Docker Image
